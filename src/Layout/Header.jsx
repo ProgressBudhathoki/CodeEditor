@@ -6,7 +6,7 @@ import { IoMdArrowDropup } from "react-icons/io";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { RiTeamLine } from "react-icons/ri";
 
-function Header({ setLayoutStyle, proShow }) {
+function Header({ setLayoutStyle, proShow, onRun }) {
   const [showlayout, setShowlayout] = useState(false);
   const layoutRef = useRef(null);
 
@@ -38,8 +38,24 @@ function Header({ setLayoutStyle, proShow }) {
         </div>
         <div className="flex items-center">
           <div className="flex gap-x-6 items-center">
-            <CiSaveUp2 className="text-xl text-white" />
-            <RiTeamLine className="text-xl text-white" />
+            <button
+              onClick={onRun}
+              className="bg-yellow-500 text-white text-sm font-normal px-5 rounded-sm py-2"
+            >
+              Run
+            </button>
+            <CiSaveUp2
+              className="text-xl text-white cursor-pointer"
+              onClick={() => {
+                proShow(true);
+              }}
+            />
+            <RiTeamLine
+              className="text-xl text-white cursor-pointer"
+              onClick={() => {
+                proShow(true);
+              }}
+            />
           </div>
           <hr className="w-8 rotate-90" />
 
@@ -88,7 +104,6 @@ function Header({ setLayoutStyle, proShow }) {
               className="bg-transparent border-[1px] px-2 py-1  flex items-center  border-yellow-200  text-yellow-500 rounded-sm"
               onClick={() => {
                 proShow(true);
-                console.log("clicked");
               }}
             >
               <AiFillThunderbolt className="text-xl text-white" />

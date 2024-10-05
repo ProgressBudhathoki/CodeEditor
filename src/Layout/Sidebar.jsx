@@ -8,7 +8,7 @@ import { FaSync } from "react-icons/fa";
 import { FaFileAlt } from "react-icons/fa";
 import { IoIosColorPalette } from "react-icons/io";
 
-export default function Sidebar() {
+export default function Sidebar({ proShow }) {
   const Reducer = (state, action) => {
     switch (action.type) {
       case "COLLECTIONS":
@@ -46,7 +46,12 @@ export default function Sidebar() {
       <div className="h-[100%] w-[20%] bg-zinc-900	 fixed left-0 top-0  ">
         <div className=" flex justify-between items-center border-b p-[7.2px] ">
           <FaJsfiddle className=" text-5xl font-bolder text-yellow-500" />
-          <FiLayout className="text-2xl font-bold text-white" />
+          <FiLayout
+            className="text-2xl font-bold text-white cursor-pointer "
+            onClick={() => {
+              proShow(true);
+            }}
+          />
         </div>
 
         <div className="">
@@ -66,7 +71,12 @@ export default function Sidebar() {
                 <span className="text-gray-600 text-[12px]">
                   SELLECT COLLECTION:
                 </span>
-                <button className="text-white text-sm font-normal mt-2 ">
+                <button
+                  className="text-white text-sm font-normal mt-2 cursor-pointer "
+                  onClick={() => {
+                    proShow(true);
+                  }}
+                >
                   + New Collection
                 </button>
               </div>
@@ -91,7 +101,14 @@ export default function Sidebar() {
                     placeholder="JavaScript/CSS URL"
                     className=" bg-transparent  caret-white focus:outline-none font-normal "
                   />
-                  <button className="text-yellow-300">+ADD</button>
+                  <button
+                    className="text-yellow-300 cursor-pointer"
+                    onClick={() => {
+                      proShow(true);
+                    }}
+                  >
+                    +ADD
+                  </button>
                 </div>
                 <ul className="text-gray-600 text-[12px] list-disc mt-2 ml-4">
                   <li>Paste a direct CSS/JS URL</li>
@@ -127,7 +144,9 @@ export default function Sidebar() {
                   See docs for more info
                 </span>
                 <span className="text-gray-600 text-[12px]">
-                  You Need Pro Version
+                  You Need{" "}
+                  <span className="text-[16px] text-yellow-600">Pro</span>{" "}
+                  Version
                 </span>
               </div>
             )}

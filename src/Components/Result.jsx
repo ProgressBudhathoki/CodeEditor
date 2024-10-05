@@ -14,7 +14,7 @@ function Result({ output, onRun, setLayoutStyle }) {
           onClick={onRun}
           className="bg-yellow-500 text-white text-sm font-normal px-5 rounded-sm"
         >
-          Run {setLayoutStyle}
+          Run
         </button>
       </div>
 

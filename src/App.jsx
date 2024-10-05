@@ -64,7 +64,11 @@ function App() {
 
   return (
     <>
-      <Layout setLayoutStyle={setActiveLayoutIndex} setProShow={setProShow}>
+      <Layout
+        setLayoutStyle={setActiveLayoutIndex}
+        setProShow={setProShow}
+        onRun={handleRun}
+      >
         <div
           className={`absolute right-0 bottom-0 w-[80%] h-[90%]  ${layoutStyles[activeLayoutIndex]}`}
         >

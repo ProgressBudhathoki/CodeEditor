@@ -5,11 +5,12 @@ import Header from "./Header";
 function Layout(props) {
   return (
     <>
-      <Sidebar />
+      <Sidebar proShow={props.setProShow} />
       {props.children}
       <Header
         setLayoutStyle={props.setLayoutStyle}
         proShow={props.setProShow}
+        onRun={props.onRun}
       />
     </>
   );
