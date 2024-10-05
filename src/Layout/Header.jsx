@@ -6,7 +6,7 @@ import { IoMdArrowDropup } from "react-icons/io";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { RiTeamLine } from "react-icons/ri";
 
-function Header({ setLayoutStyle }) {
+function Header({ setLayoutStyle, proShow }) {
   const [showlayout, setShowlayout] = useState(false);
   const layoutRef = useRef(null);
 
@@ -25,7 +25,7 @@ function Header({ setLayoutStyle }) {
   }, [layoutRef]);
 
   return (
-    <div>
+    <div className="">
       <div className="h-[10%] w-[80%]  bg-[#1e1f1f] border-l 	border-b  absolute top-0 right-0 flex justify-between  items-center  p-4 ">
         <div className=" flex gap-x-6 items-center">
           <CiLock className="text-xl text-white" />
@@ -84,7 +84,13 @@ function Header({ setLayoutStyle }) {
             <MdOutlineDarkMode className="text-xl font-bold text-white" />
             <hr className="w-8 rotate-90" />
 
-            <button className="bg-transparent border-[1px] px-2 py-1  flex items-center  border-yellow-200  text-yellow-500 rounded-sm">
+            <button
+              className="bg-transparent border-[1px] px-2 py-1  flex items-center  border-yellow-200  text-yellow-500 rounded-sm"
+              onClick={() => {
+                proShow(true);
+                console.log("clicked");
+              }}
+            >
               <AiFillThunderbolt className="text-xl text-white" />
               Go PRO
             </button>

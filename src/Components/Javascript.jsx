@@ -1,9 +1,9 @@
 import { Editor } from "@monaco-editor/react";
 
-function Javascript({ value, onChange,setLayoutStyle}) {
+function Javascript({ value, onChange, setLayoutStyle }) {
   return (
     <>
-      <div className="w-[100%] h-full bg-[#1e1f1f] border-l">
+      <div className="w-[100%] h-full bg-[#1e1f1f] ">
         <h3 className="text-xl m-2 text-white font-bold">JavaScript</h3>
         <Editor
           height="90%"

@@ -7,7 +7,10 @@ function Layout(props) {
     <>
       <Sidebar />
       {props.children}
-      <Header setLayoutStyle={props.setLayoutStyle} />
+      <Header
+        setLayoutStyle={props.setLayoutStyle}
+        proShow={props.setProShow}
+      />
     </>
   );
 }
